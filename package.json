@@ -9,7 +9,7 @@
   "author": "Anthony Howell anthonyrhowell@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "aws-lambda-ses-forwarder":"4.1.0",
+    "aws-lambda-ses-forwarder":"git+https://github.com/larkinrobert/aws-lambda-ses-forwarder.git#dynamo",
     "js-yaml":"3.8.2"
   }
 }

@@ -1,5 +1,5 @@
 config:
-  fromEmail: noreply@example.com
+  fromEmail: developer@synesee.com
   emailKeyPrefix: ''
   subjectPrefix: 'Forwarded: '
   forwardMapping:
@@ -12,3 +12,11 @@ config:
       - example.john@example.com
     info:
       - info@example.com
+
+steps:
+    - exports.parseEvent
+    - exports.buildForwardMap
+    - exports.transformRecipients
+    - exports.fetchMessage
+    - exports.processMessage
+    - exports.sendMessage
