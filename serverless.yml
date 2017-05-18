@@ -55,7 +55,22 @@ resources:
             Condition:
               StringEquals:
                 aws:Referer:
-                    Ref: AWS::AccountId   
+                    Ref: AWS::AccountId
+
+   tableEmailForwarder:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        AttributeDefinitions:
+         - 
+           AttributeName: "original_address"
+           AttributeType: "S"
+        KeySchema:
+         -
+           AttributeName: "original_address"
+           KeyType: "HASH"
+        ProvisionedThroughput:
+          ReadCapacityUnits: "5"
+          WriteCapacityUnits: "5"
      
  Outputs:
     SesForwarderBucket:
